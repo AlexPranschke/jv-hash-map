@@ -12,13 +12,13 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         size = 0;
     }
 
-    public void checkThreshold() {
+    private void checkThreshold() {
         if (size >= table.length * LOAD_FACTOR) {
             resize();
         }
     }
 
-    public void resize() {
+    private void resize() {
         Node<K, V>[] oldTable = table;
         table = new Node[oldTable.length * 2];
         size = 0;
