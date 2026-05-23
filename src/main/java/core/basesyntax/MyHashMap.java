@@ -1,7 +1,7 @@
 package core.basesyntax;
 public class MyHashMap<K, V> implements MyMap<K, V> {
     private static final int DEFAULT_CAPACITY = 16;
-    private static final int DEFAULT_RESIZE= 2;
+    private static final int DEFAULT_RESIZE = 2;
     private static final float LOAD_FACTOR = 0.75f;
     private Node<K, V>[] table;
     private int size;
@@ -37,7 +37,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
         Node<K, V> current = table[index];
         while (current != null) {
-            if ((current.key == null && key == null) || (current.key != null && current.key.equals(key))) {
+            if ((current.key == null && key == null)
+                    || (current.key != null && current.key.equals(key))) {
                 current.value = value;
                 return;
             }
@@ -59,7 +60,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
         Node<K, V> current = table[index];
         while (current != null) {
-            if ((current.key == null && key == null) || (current.key != null && current.key.equals(key))) {
+            if ((current.key == null && key == null)
+                    || (current.key != null && current.key.equals(key))) {
                 return current.value;
             }
             current = current.next;
